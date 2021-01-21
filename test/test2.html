@@ -1,0 +1,45 @@
+<!--this method uses button click,document.querySelector & addEventListener-->
+<!--uses ananymous function which is called within the addEventListener-->
+
+<html>
+    <head>
+    </head>
+    <body>
+        
+        <button id="btn">click</button>
+        
+        
+        <script>
+            var output= [];
+            var count= 1;
+            
+const button= document.querySelector("#btn");
+button.addEventListener('click', function(){
+    fizzBuzz()
+    console.log(output);
+    document.body.prepend(output)
+});
+
+function fizzBuzz(){
+    while(count<=100){
+    if (count%3 ===0 & count%5 ===0) {
+     output.push("fizzBuzz");
+    }
+    else if(count%3 ===0){
+        output.push("Fizz");
+    }
+    else if(count%5 ===0){
+        output.push("Buzz");
+    }
+    else {
+        output.push("count");
+    }
+    count++;
+}  
+   
+}
+    
+</script>
+    </body>
+    </html>
+    
