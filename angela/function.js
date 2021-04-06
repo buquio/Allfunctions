@@ -4,7 +4,7 @@ var tweetCount= tweet.length;
 alert ("you have written" + tweetCount + "Characters, you have" + (140 - tweetCount) + "characters remaining");
 
 // 2
-var tweet=("compose your tweet");
+var tweet=prompt("compose your tweet");
 var tweetUnder140=tweet.slice(0,140);
 alert(tweetUnder140);
 

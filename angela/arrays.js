@@ -54,33 +54,8 @@ fizzBuzz()
 
 ans:[1,1,1,1]
 
-// 3a using while loop 
-var output= [];
-var count= 1;
 
-function fizzBuzz(){
-    while(count<=100){
-        
-    if (count%3 ===0 & count%5 ===0){
-     output.push("fizzBuzz");
-    }
-    else if(count%3 ===0){
-        output.push("Fizz");
-    }
-    else if(count%5 ===0){
-        output.push("Buzz");
-    }
-    else {
-        output.push("count");
-    }
-    count++;
-}
-    console.log(output);
-}
-    fizzBuzz()
-
-
-    ///////3b using for loop
+    ///3
     var output= [];
 
 function fizzBuzz(){
@@ -100,11 +75,15 @@ function fizzBuzz(){
     }
 }
     console.log(output);
+    // or 
+   document.body.prepend(output)
+
 }
+// or 
     fizzBuzz()
 
 
-    // 4 who is paying
+    // 4a who is paying
     var guestList= ["angela" ,"ben", "jenny", "michal" ,"chloe"]
 
     function whosPaying(guestName){
@@ -112,8 +91,25 @@ function fizzBuzz(){
         var randomPersonPosition= Math.random()*numberOfPeople;
         var randomPerson= guestName(randomPersonPosition);
         return randomPerson + "is going to buy lunch today!"
+    } 
+
+
+    //4b
+    var guestList= ["angela" ,"ben", "jenny", "michal" ,"chloe"]
+
+    function whosPaying(guestList){
+
+        var numberOfPeople= guestList.length;
+
+        var randomPersonPosition= Math.random() * numberOfPeople;
+        console.log(Math.floor(randomPersonPosition) + " - " + Math.ceil(randomPersonPosition) + " - " + randomPersonPosition)
+
+        var randomPerson= guestList[Math.floor(randomPersonPosition)];
+        return randomPerson + " is going to buy lunch today!"
 
     } 
+
+console.log(whosPaying(guestList))
 
 
     // 5 Fibonacci series
@@ -154,8 +150,7 @@ function fizzBuzz(){
 
 
     // solutionB
-    var fibonacci_series = function (n)
-{
+    function  fibonacci_series (n){
 	if(n===1)
 {
 return[0,1];

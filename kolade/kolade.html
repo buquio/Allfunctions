@@ -1,0 +1,53 @@
+
+<!-- NOTE: THIS WILL RUN IN TERMINAL USING node test.js  BECOS ITS a javascript statement   -->
+<!--
+// 1 
+var guestList= ["angela","jack","pan","james","lara","jason"];
+// var guestName= prompt("what is your name?"); //u can only use this inside console snippet
+var guestName= "jack";
+
+
+if(guestList.includes(guestName)){
+    // alert("welcome");  //u can only see this inside console snippet
+    console.log("welcome");
+    
+}
+else{
+    // alert("sorry, maybe next time!!"); //u can only see this inside console snippet
+    console.log("sorry, maybe next time!!");
+
+};
+-->
+
+
+<!--//xxxxx INSERT IT INSIDE A FUNCTION-->
+
+<!-- NOTE: THIS WILL RUN IN LIVE SERVAER OR BROWSER BECOS ITS HTML  -->
+
+<html>
+<head>
+</head>
+<body>
+    <label> guest name </label>
+    <input type="text" value="" placeholder="enter guest name here">
+    <br><br>
+    <button onclick="getGuestName">verify guest name</button>
+    
+    
+    <script>
+var guestList= ["angela", "jack" ,"pan" ,"james", "lara" ,"jason"];
+
+function getGuestName() {
+    var guestName= document.querySelector("[input]").text
+    
+    if(guestList.includes(guestName)){
+    alert("welcome");
+}
+else{
+    alert("sorry, maybe next time!!")
+};
+  
+}
+</script>
+</body>
+<html>
