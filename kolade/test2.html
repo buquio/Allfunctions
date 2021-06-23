@@ -1,28 +1,24 @@
 <!--this method uses button click,document.querySelector & addEventListener-->
-<!--uses ananymous function which is called within the addEventListener-->
-
+<!--also uses ananymous function which is called within the addEventListener-->
+<!-- also uses for loop -->
 <html>
     <head>
     </head>
     <body>
-        
         <button id="btn">click</button>
-        <!-- or to remove line 18 & 19-->
+<!-- use this below in place of <button id="btn">click</button> & button.addEventListener('click', function(){  -->
         <!-- <button onclick="fizzBuzz">click</button> -->
 
-        
-        
         <script>
             var output= [];
-            
-const button= document.querySelector("#btn");
-button.addEventListener('click', function(){ //or button.addEventListener('click', fizzBuzz(){ 
+           const button= document.querySelector("#btn");
+button.addEventListener('click', function(){ 
+//or button.addEventListener('click', fizzBuzz(){ 
     fizzBuzz() 
-    console.log(fizzBuzz());
-    // or 
+
     console.log(output);
-    // or 
     document.body.prepend(output)
+
 });
 
 function fizzBuzz(){

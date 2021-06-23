@@ -1,0 +1,117 @@
+///////////////////
+ <!-- Render the emojis as <span> tags inside the emojisContainer <div> -->
+<!-- Hints: you can achieve this by creating a span with createElement(), -->
+<!-- setting its content with textContent, and using append() to append it to the container -->
+
+<html>
+<head>
+</head>
+<body>
+    <div id="emojiContainer"></div>
+    <script>
+        const myEmojis = ["👨‍💻", "⛷", "🍲"]
+
+        for (let i = 0; i < myEmojis.length; i++) {
+            // create a span element first & put the emoji inside
+            const emojispan = document.createElement('span')
+            emojispan.textContent = myEmojis[i]
+            //get the emojicontainer and append the emojispan to it
+            const emojiContainer = document.getElementById("emojiContainer")
+            emojiContainer.append(emojispan)
+        }
+        // OR without the span directly append myemoji to the emojicontainer
+        // const myEmojis = ["👨‍💻", "⛷", "🍲"]
+
+        // for (let i = 0; i < myEmojis.length; i++) {
+        //     const emojiContainer = document.getElementById("emojiContainer")
+        //     emojiContainer.append(myEmojis[i])
+        // }
+    </script>
+</body>
+</html>
+
+//////////////////////
+<html>
+<head>
+    <style>
+        .title {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="text-input" value="This is some content" />
+
+    <script>
+        var inputBox = document.getElementById("text-input")
+        inputBox.value = "CHANGED!"
+
+    </script>
+</body>
+</html>
+
+xxxxx
+
+<html>
+<head>
+</head>
+<body>
+    <ul id="my-list">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <script>
+        var newLi = document.createElement("li")
+        newLi.textContent = "3"
+        var myList = document.getElementById("my-list")
+        myList.prepend(newLi)
+        /**
+         * Add a paragraph after the existing unordered list with any text you want inside.
+         * Do this completely in JavaScript!
+         */
+        var newP = document.createElement("p")
+        newP.textContent = "V School rocks!"
+        newP.style.textAlign = "center"
+        newP.style.fontSize = "30px"
+        // document.body.append(newP)
+        myList.prepend(newP)
+    </script>
+</body>
+</html>
+
+
+////////////////
+<!-- Render the list in the array inside the  <ul> -->
+
+<!-- Hints: you can achieve this by creating a li with createElement(), -->
+<!-- setting its content with textContent, and using append() to append it to the ul -->
+
+<html>
+<head>
+</head>
+<body>
+    <ul id="rangers"></ul>
+
+    <script>
+        var powerRangers = ["Jason Lee Scott", "Kimberly Hart", "Zack Taylor", "Trini Kwan", "Billy Cranston"]
+        var rangersList = document.getElementById("rangers")
+
+        for (var i = 0; i < powerRangers.length; i++) {
+            var newName = document.createElement("li")
+            newName.textContent = powerRangers[i]
+            rangersList.append(newName)
+            // rangersList.textContent = powerRangers[i] // wrong rangerslist is a <ul>,accept only <li>
+
+
+            //    or 
+            // var powerRangers = ["Jason Lee Scott",  "Kimberly Hart",  "Zack Taylor", "Trini Kwan", "Billy Cranston"]
+            // var rangersList = document.getElementById("rangers")
+
+            // for (var i = 0; i < powerRangers.length; i++) {
+            // rangersList.innerHTML += "<li>" + powerRangers[i] + "</li>"
+
+        }
+    </script>
+</body>
+</html>
