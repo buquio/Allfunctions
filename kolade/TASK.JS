@@ -36,8 +36,8 @@ function checkYuGiOh(n){
 // checkYuGiOh("5")
 // checkYuGiOh("fizzbuzz is meh")
 
-// console.log(checkYuGiOh(10))
-console.log(checkYuGiOh("0"));
+console.log(checkYuGiOh(10))
+// console.log(checkYuGiOh("0"));
 // console.log(checkYuGiOh("5"));
 // console.log(checkYuGiOh("kolade kehinde"))
 

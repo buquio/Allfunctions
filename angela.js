@@ -1,12 +1,10 @@
 
-
-
-//////////////
+//////////////❗❌❓
 function myFunction(str) {
-    var arr = str.split("");
+    var arr = str.split(" ");
     var text = "";
     for (var i = 0; i < arr.length; i++) {
-      return text += arr[i] + "<br>"
+      return text += arr[i] + "<br>";
     }
     }
     console.log (myFunction("Hello"))
@@ -21,11 +19,12 @@ function myFunction(str) {
     ///////////////
     //to display the first array element, after a string split.
     function myFunction() {
-      var str = "a,b,c,d,e,f"; 
-      var arr = str.split(","); //splitting a string turns it to an array
-        return arr
-      }
-      console.log (myFunction("abcdef"))
+        var str = "a,b,c,d,e,f"; 
+        var arr = str.split(","); //splitting a string turns it to an array
+        //   return arr  
+          return arr[0]
+        }
+        console.log (myFunction("abcdef"))
     
     ///////////
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -36,7 +35,7 @@ function myFunction(str) {
     text += "</ul>"; //closing tag
     
     console.log(fruits)
-    console.log(text)
+    // console.log(text)
     
     // xxxxxx using .foreach 
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -48,7 +47,7 @@ function myFunction(str) {
       text += "<li>" + value + "</li>";
     }
     console.log(fruits)
-    console.log(text)
+    // console.log(text)
 
 
 ///////

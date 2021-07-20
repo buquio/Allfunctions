@@ -1,7 +1,7 @@
 
-function findLongestWordLength(str) { //find longest word in a sentence
-  var words = str.split(' '); // Take the string and convert it into an array of words. 
-  var maxLength = 0;  // Declare a variable to keep track of the maximum
+function findLongestWordLength(sentence) { //find longest word in a sentence
+  var words = sentence.split(' '); // Take the string and convert it into an array of words. 
+  var maxLength = " ";  // Declare a variable to keep track of the maximum
 
   for (var i = 0; i < words.length; i++) {  // loop from 0 to the length of the array of words.
     if (words[i].length > maxLength) {
@@ -15,48 +15,13 @@ function findLongestWordLength(str) { //find longest word in a sentence
 findLongestWordLength("my name is bukola") 
 console.log(findLongestWordLength("my name is bukola"));
 
-///b???
-function findLongestWordLength(str) { //find longest word in a sentence
-  var words = str.split(' '); // Take the string and convert it into an array of words. 
-  var maxLength = 0;  // Declare a variable to keep track of the maximum
-
-  for (var i = 0; i < words.length; i++) {  // loop from 0 to the length of the array of words.
-    if (words[i].length > maxLength) {
-      maxLength = words[i].length; //return the number value of the word with the maxLength.
-      var indexOfMax = maxLength.index
-      var longestWord = words[indexOfMax]
-    }
-  }
-  // return maxLength;
-  return longestWord;
-}
-
-findLongestWordLength("my name is bukola") 
-console.log(findLongestWordLength("my name is bukola"));
 
 
-
-//////////////////////////////
-function convertToF(celsius) {
-  var fahrenheit = celsius * (9 / 5) + 32;
-
-  if (typeof fahrenheit !== "undefined") {
-  // if (typeof fahrenheit === "true") {
-    return fahrenheit;
-  } else {
-    return "fahrenheit not defined";
-  }
-}
-
-convertToF(30);
-console.log(convertToF(30))
-
-///b
+///////////
 function convertToF(celsius) {
   var fahrenheit = celsius * (9 / 5) + 32;
 
   if (typeof celsius !== Number) {
-  // if (typeof fahrenheit === "true") {
     return "celsius is not a number";
   } else {
       return fahrenheit;
@@ -79,29 +44,17 @@ console.log(reverseString("bukola"))
 //////////////////////////////📌💯✔
 function factorialize(num) {
   for (var product = 1; num > 0; num--) { //product is constant,while num is changing
-    product *= num; // 1=1*5, 1=1*4 etc
+    product *= num; // 1=1*5=5, 1=1*4 =4etc
   }
   return product;
 }
 
-factorialize(5);
+factorialize(5); //5x4x3x2x1
 console.log(factorialize(5))
 
 
-///b.//////////////////////////////❗❌❓
-function factorialize(num, factorial = 1) {
-  if (num == 0) {
-    return factorial;//which is equal to 1
-  } else {
-    return factorialize(num - 1, factorial * num);
-  }
-}
 
-factorialize(5);
-console.log(factorialize(5))
-
-
-///////////////////////////
+/////////////////////////////❗❌❓
 function largestOfFour(arr) {
   var results = [];
   for (var n = 0; n < arr.length; n++) {
@@ -130,7 +83,7 @@ console.log(largestOfFour(arr))
 
 
 
-//////////////////////////
+////////////////////////////❗❌❓
 function confirmEnding(str, target) {
 // For example str.slice(10, 17) would return - give me.
 
@@ -149,7 +102,7 @@ console.log(confirmEnding("He has to give me a new name", "name"))
 // Finally we compare the return result of slice to target and check if they have the same characters.
 
 
-/////////////////////////////
+//////////////////////////////
 function repeatStringNumTimes(str, num) {
   var accumulatedStr = "";
 
@@ -160,13 +113,25 @@ function repeatStringNumTimes(str, num) {
 
   return accumulatedStr;
 }
-repeatStringNumTimes(str, num)//??
-console.log(repeatStringNumTimes(str, num))
+repeatStringNumTimes('bukola', 4)
+console.log(repeatStringNumTimes('bukola', 4))
 // Code Explanation
 // Create an empty string variable to store the repeated word.
 // Use a while loop or for loop to repeat code as many times as needed according to num
 // Then we just have to add the string to the variable created on step one, and increase or decrease num depending on how you set the loop.
 // At the end of the loop, return the variable for the repeated word.
+//b
+function repeatStringNumTimes(str, num) {
+  var accumulatedStr = "";
+
+  for (var i= num; num > 0; num--) {
+    accumulatedStr += str;
+  }
+
+  return accumulatedStr;
+}
+//   repeatStringNumTimes('bukola', 4)
+console.log(repeatStringNumTimes('bukola', 7))
 
 
 /////////////////////////
@@ -178,13 +143,14 @@ function truncateString(str, num) {
     return str;
   }
 }
+console.log(truncateString('bukola', 3))
 // Code Explanation
 // We start off with a simple if statement to determine one of two outcomes…
 // If our string length is greater than the num we want to truncate it, we return a slice of our string starting at character 0, and ending at num. We then append our '...' to the end of the string.
 // However, if above situation is not true, it means our string length is less than our truncation num. Therefore, we can just return the string.
 
 
-///////////////////
+///////////////////❗❌❓
 // Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. 
 // This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
 function findElement(arr, func) {
@@ -218,22 +184,24 @@ console.log(booWho(null))
 // Uses the operator typeof to check if the variable is a boolean. If it is, it will return true. Otherwise, if it is any other type it will return false.
 
 
-//////////////to make the every first letter word an upppercase
-function titleCase(str) {
-  var convertToArray = str.toLowerCase().split(" ");
-  var result = convertToArray.map(function(val) { //val=each array
-    return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+//////////////to make the every first letter word in a sentence an upppercase
+function titleCase(sentence) {
+  var convertToArray = sentence.toLowerCase().split(" ");
+  var result = convertToArray.map(function(arr) { //arr=each array
+    return arr.replace(arr.charAt(0), arr.charAt(0).toUpperCase());
   });
   return result.join(" ");
 }
-
 titleCase("I'm a little tea pot");
 console.log(titleCase("I'm a little tea pot"))
 // Code Explanation
 // first we make entire string lowercase and then converting it into array. 
 // Then we are using map function to replace the lowercase character with uppercase. Finally, we are returning the string using join method.
 
-//////////////////////
+
+////////////////PAGE2////////////////////////////////////////////////////////////❗❌❓
+// Our goal is to take all of the elements from arr1 and insert them into arr2 starting with index position n. 
+//At the same time we must ensure that neither arr1 or arr2 have been mutated.
 function frankenSplice(arr1, arr2, n) {
   // It's alive. It's alive!
   let localArray = arr2.slice();
@@ -251,7 +219,7 @@ function frankenSplice(arr1, arr2, n) {
 // Finally, we return the localArray and end the function.
 
 
-////////////////////
+////////////////////❗❌❓
 function bouncer(arr) {
   let newArray = [];
   for (var i = 0; i < arr.length; i++) {
@@ -278,19 +246,22 @@ function bouncer(arr) {
 
 //////////////////
 function getIndexToIns(arr, num) {
-  arr.sort(function(a, b) {
+  arr.sort(function(a, b) { //index a & b
     return a - b;
   });
 
   for (var a = 0; a < arr.length; a++) {
-    if (arr[a] >= num) return a;
+    if (arr[a] >= num) 
+    return a;
   }
 
   return arr.length;
 }
+console.log(getIndexToIns([3,2, 7, 9], 7))
 // Code Explanation
 // First I sort the array using .sort(callbackFunction) to sort it by lowest to highest, from left to right.
-// Then I use a for loop to compare the items in the array starting from the smallest one. When an item on the array is greater than the number we are comparing against, then we return the index as an integer.
+// Then I use a for loop to compare the items in the array starting from the smallest one. 
+//When an item on the array is greater than the number we are comparing against,then we return the index as an integer.
 
 
 //////////////////
