@@ -2,24 +2,38 @@
  <!-- Render the emojis as <span> tags inside the emojisContainer <div> -->
 <!-- Hints: you can achieve this by creating a span with createElement(), -->
 <!-- setting its content with textContent, and using append() to append it to the container -->
-
 <html>
 <head>
+    <style>
+        .emojiContainer{
+            background-color: blueviolet;
+            width: 350px;
+            height: 120px;
+        }
+        span{
+            margin: 20px;
+            /* display: block; */
+            display: inline-block;
+
+        }
+    </style>
 </head>
 <body>
-    <div id="emojiContainer"></div>
+    <div id="emojiContainer" class="emojiContainer"></div>
     <script>
-        const myEmojis = ["👨‍💻", "⛷", "🍲"]
+        const myEmojis = ["👨‍💻", "⛷", "🍲"] // emoji in the emoji array are put inside a span, then append inside emojisContainer
 
         for (let i = 0; i < myEmojis.length; i++) {
             // create a span element first & put the emoji inside
             const emojispan = document.createElement('span')
             emojispan.textContent = myEmojis[i]
+            emojispan.style.fontSize='50px';
+
             //get the emojicontainer and append the emojispan to it
             const emojiContainer = document.getElementById("emojiContainer")
             emojiContainer.append(emojispan)
         }
-        // OR without the span directly append myemoji to the emojicontainer
+        // OR without the span directly append myemoji[i] to the emojicontainer
         // const myEmojis = ["👨‍💻", "⛷", "🍲"]
 
         // for (let i = 0; i < myEmojis.length; i++) {
@@ -28,7 +42,6 @@
         // }
     </script>
 </body>
-</html>
 
 //////////////////////
 <html>
@@ -51,7 +64,6 @@
 </html>
 
 xxxxx
-
 <html>
 <head>
 </head>
@@ -101,7 +113,7 @@ xxxxx
             var newName = document.createElement("li")
             newName.textContent = powerRangers[i]
             rangersList.append(newName)
-            // rangersList.textContent = powerRangers[i] // wrong rangerslist is a <ul>,accept only <li>
+            // rangersList.textContent = powerRangers[i] // wrong rangerslist is a <ul>,accept only <li>i.e new name
 
 
             //    or 

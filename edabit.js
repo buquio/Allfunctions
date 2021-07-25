@@ -31,8 +31,11 @@ function addition( a, b ) {
 function addition( a, b ) {
     return a + b
   }
+  console.log (addition( 2, 4 ))
+
 //   or 
 const addition = (a, b) => a + b;
+console.log (addition( 2, 4 ))
 
 
 //////////// Convert Minutes into Seconds 
@@ -70,13 +73,17 @@ function triArea(base, height) {
 ////// Convert Age to Days
 // Create a function that takes the age in years and returns the age in days.
 function calcAge(age) {
-	let ageInDays = (age*365)>=0 && typeof(age*365) == 'number' ? (age*365) : []
+	let ageInDays = age >= 0 && typeof(age) == 'number' ? (age*365) : []
 	return ageInDays
 }
+console.log(calcAge(3))
+
 // or 
 function calcAge(age) {
 	return age < 0 ? null : age * 365
 }
+console.log(calcAge(3))
+
 // or 
 function calcAge(age) {
 	// let ageInDays;
@@ -94,6 +101,8 @@ console.log(calcAge(3))
 function cubes(a) {
 	return Math.pow(a,3);
 }
+console.log(cubes(4))
+
 // or 
 function cubes(a) {
 	return a ** 3
@@ -112,12 +121,6 @@ console.log(cubes(4))
 function getFirstValue(arr) {
 	let firstElemment = arr[0];
 	return firstElemment;
-}
-console.log(getFirstValue([3,4,7]))
-
-// or 
-function getFirstValue(arr) {
-	return arr[0];
 }
 console.log(getFirstValue([3,4,7]))
 
@@ -168,7 +171,8 @@ console.log(giveMeSomething('goodnews'))
 /////////
 function sumPolygon(n) {
 	if (n>2){
-	return	sumOfInternalAngles= (n - 2) * 180
+		let sumOfInternalAngles= (n - 2) * 180
+	return	sumOfInternalAngles
 	}else{
 return
 	}

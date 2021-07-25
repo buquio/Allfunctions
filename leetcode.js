@@ -12,13 +12,14 @@ var twoSum = function(nums, target) {
     const len = nums.length;
     for( let i=0; i< len; i++ ){
         //if target - current value in array exist in obj then that's what we need
-        if( target - nums[i] in obj ){
+        if(target - nums[i] in obj ){
             return [ obj[ target - nums[i] ], i ];
         }
         //if target - current value doesn't exist in obj then push the value in obj
         obj[ nums[i] ] = i;
     }
 };
+console.log(twoSum([2,7,11,15], 9))
 
 //////////
 // REVERSE AN INTERGER NOT MORE THEN 31 INDEX
@@ -48,6 +49,7 @@ var isPalindrome = function(x) {
     
     return false;
 };
+console.log(isPalindrome(2332))
 
 
 // Roman to Integer
@@ -61,7 +63,7 @@ L             50
 C             100
 D             500
 M             1000
- 
+ //A  ❗❌❓
 let dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000};
     let ans = 0;
     for(let i = 0; i < s.length; i++) {
@@ -74,9 +76,9 @@ let dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000};
         }
     }
     return ans;
-    // or 
-    const roman = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
 
+    // or B ❗❌❓
+    const roman = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
 var romanToInt = function(S) {
     let ans = 0
     for (let i = S.length-1; ~i; i--) {
@@ -86,85 +88,26 @@ var romanToInt = function(S) {
     }
     return ans
 };
+console.log(romanToInt(XL))
 
-// or 
-/**
- * Hardcoding paired values might be considered bad or anything, 
- * but it might be easier to read and understand.
- * @param {string} s
- * @return {number}
- */
- var romanToInt = function(s) {
-    /**
-    * A map of all possible roman number combinations. 
-    * Note there's no need to put keys inside quotes.
-    */
-    const map = {
-        I: 1,
-        IV: 4,
-        IX: 9,
-        V: 5,
-        X: 10,
-        XL: 40,
-        XC: 90,
-        L: 50,
-        C: 100,
-        CD: 400,
-        CM: 900,
-        D: 500,
-        M: 1000
-    }
-    
-    /**
-    * We'll parse string from left to right, so the starting value is 0.
-    */
-    let num = 0; 
-    for (let i = 0; i < s.length; i++) {       
-        /**
-        * Current roman symbol.
-        * You can be fine without this variable using s[i] instead of it, 
-        * but such code is tough to read for others or even you after a while.
-        */
-        const current = s[i];
-        
-        /**
-        * Current roman symbol pair if it's possible to get one from the remaining string. 
-        * If the roman number string has only one symbol or we're at the end of it, set it to
-        * an empty string, so the following if statement fails because there's no number with 
-        * the empty key inside the map
-        */
-        const pair = s[i + 1] ? current + s[i + 1] : "";   
-        
-        /**
-        * If the map contains a number linked to the current pair, we add its value to the num.
-        * Note how we also increment the i because we processed a pair, 
-        * so we should skip the next symbol
-        */        
-        if (map[pair]) {
-            num += map[pair];
-            i++;
-        } else {
-            /**
-            * If there's no paired value in the map, we look for value 
-            * linked to the current symbol as standalone.
-            */
-            num += map[current]
-        }
-    }
-    
-    return num;
-};
   /////////////////////////////
   function pow(x, n) {
     let result = 1; //initialise result with 1
   
-    // multiply result by x n times in the loop
+    // multiply result n times in the loop
     for (let i = 0; i < n; i++) { 
-      result *= x;  //return x
-                    //return result*=x 
-                    //return result=result*x i.e new result
-                    //return result    
+      result *= x; //return result=result*x i.e new result
     }
     return result;
   }
-  alert( pow(2, 3) ); // ans 8
+//   alert( pow(2, 3) ); 
+  console.log( pow(2, 3) ); 
+
+
+  ////or
+  function powOf(a, b) {
+	return Math.pow(a,b);
+}
+console.log(powOf(4, 2))
+
+  

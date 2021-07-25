@@ -4,14 +4,14 @@ function myFunction(str) {
     var arr = str.split(" ");
     var text = "";
     for (var i = 0; i < arr.length; i++) {
-      return text += arr[i] + "<br>";
+      return text += arr[i] + "<br>"; //   "\n"
     }
     }
     console.log (myFunction("Hello"))
     // ans
     // H
     // e
-    // l
+    // l 
     // l
     // o
     
@@ -56,13 +56,14 @@ let numArray = [10, 20, 30, 40, 50, 60, 70, 80, 90];
 for (let i = 0; i < numArray.length; i++) {
     total += numArray[i];
 }
+console.log(total)
+
 
 //xxx using reduce
 const numbers = [1, 2, 3, 4, 5, 6];
 const doubledNumbers = numbers.reduce((acc, num) => {
   acc.push(num * 2);
-  return acc;
-}, []);
+  return acc;}, []);
 console.log('doubled numbers', doubledNumbers);
 console.log('numbers', numbers);
 
@@ -103,7 +104,6 @@ var guestName= prompt("what is your name?");
 if(guestList.includes(guestName)){
     alert("welcome"); //u can only see this inside console snippet
     console.log("welcome");
-
 }else{
     alert("sorry, maybe next time!!") //u can only see this inside console snippet
     console.log("sorry, maybe next time!!")
@@ -123,7 +123,7 @@ if(guestList.includes(guestName)){
     <br><br>
     <button onclick="getGuestName">verify guest name</button>
     
-    <script>
+    <script> 
 var guestList= ["angela", "jack" ,"pan" ,"james", "lara" ,"jason"];
 function getGuestName() {
     var guestName= document.querySelector("[input]").text
@@ -135,7 +135,7 @@ else{
     alert("sorry, maybe next time!!")
 };
   
-}
+} 
 </script>
 </body>
 <html> */
@@ -181,7 +181,7 @@ function fizzBuzz(){
     console.log(output);
 
 
-    // 4a Random selection of who is paying
+    // 4a Random selection of who is paying ❗❌❓
     var guestList= ["angela" ,"ben", "jenny", "michal" ,"chloe"]
 
 function whosPaying(guestList){
@@ -212,7 +212,7 @@ console.log(whosPaying(guestList))
     // if n= 2 output[0, 1]
     // if n= 3 output[add last 2 values]
     // if n= length of no output[yes] or output [No]
-
+ 
     // solutionA
     function fibonacciGenerator (n) {
         var output= [];

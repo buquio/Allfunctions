@@ -8,6 +8,7 @@ numbers.forEach(myFunction);
 function myFunction(value, index, array) {
   txt = txt + value + "<br>";
 }
+console.log(txt)
 
 ///////////////////
 // Array.map()
@@ -22,6 +23,7 @@ var numbers2 = numbers1.map(myFunction);
 function myFunction(value, index, array) {
   return value * 2;
 }
+console.log(numbers2)
 
 //////////////////
 // Array.filter()
@@ -36,6 +38,7 @@ var over18 = numbers.filter(myFunction);
 function myFunction(value, index, array) {
   return value > 18;
 }
+console.log(over18)
 
 ///////////////
 // Array.reduce()
@@ -48,21 +51,22 @@ function myFunction(value, index, array) {
 var numbers1 = [45, 4, 9, 16, 25];
 var sum = numbers1.reduce(myFunction);
 
-function myFunction(total, value, index, array) {
+function myFunction(total, value, index, array) { //total===acumulator
   return total + value;//The total (the initial value / previously returned value)
 
 }  
+console.log(sum)
 
 ///b
 // The reduce() method can accept an initial value:
 var numbers1 = [45, 4, 9, 16, 25];
-var sum = numbers1.reduce(myFunction, 100);// The reduce() method can accept an initial value:
+var sum = numbers1.reduce(myFunction, 100);// The reduce() method can accept a function & an initial value;also function takes an accumulator & a value(as below)
 
-function myFunction(total, value) {
+function myFunction(total, value) { //total===acumulator
   return total + value;//The total (the initial value / previously returned value)
 
 }
-
+console.log(sum)
 // ans The sum is 199
 
 ///////////////
@@ -92,13 +96,14 @@ function myFunction(value, index, array) {
 }
 
 /////////////
-// Array.indexOf()
+// Array.indexOf() TAKES A VALUE AS PARAMETER
 // The indexOf() method searches an array for an element value and returns its position.
 // Note: The first item has position 0, the second item has position 1, and so on.
 
 // Search an array for the item "Apple":
 var fruits = ["Apple", "Orange", "Apple", "Mango"];
 var a = fruits.indexOf("Apple");
+console.log(a)
 //or 
 // array.indexOf(item, start)
 // item	Required-The item to search for.
@@ -112,15 +117,16 @@ var a = fruits.indexOf("Apple");
 // Array.lastIndexOf()
 // Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.
 
-Search an array for the item "Apple":
-
+// Search an array for the item "Apple":
 var fruits = ["Apple", "Orange", "Apple", "Mango"];
 var a = fruits.lastIndexOf("Apple");
+console.log(a)
 
 
 /////////////
 // Array.find()
 // The find() method returns the value of the first array element that passes a test function.
+//NOTE: to find all use Array.filter
 
 // This example finds (returns the value of) the first element that is larger than 18:
 
@@ -131,6 +137,7 @@ var first = numbers.find(myFunction);
 function myFunction(value, index, array) {
   return value > 18;
 }
+console.log(first)
 
 //////////////
 // Array.findIndex()

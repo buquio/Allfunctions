@@ -55,7 +55,7 @@ function FindIntersection(strArr) { //stringarray of nuumbers
   return result.length > 0 ? result.join(',') : 'false'
 
 }   
-console.log(FindIntersection(["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]);
+console.log(FindIntersection(["1, 3, 4, 7, 13", "1, 2, 4, 13, 15"]));
 
 
 //b./////////FindIntersection(strArr) 
@@ -103,15 +103,15 @@ function FindIntersection(strArr) {
   
   
   
-  /////////////For example: if str is "arrb6???4xxbl5???eee5" then your program should
-  //  return true because there are exactly 3 question marks between 6 and 4, and 3 question marks between 5 and 5 at the end of the string.
+  /////////////For example: if str is "arrb6???4xxbl5???eee5" then your program should return true because 
+  // there are exactly 3 question marks between 6 and 4 which = 10, and 3 question marks between 5 and 5 which = 10 at the end of the string.
   function QuestionsMarks(str) { 
     res = false;
-    for(let i=0; i<str.length; i++){
-        for(let j=i+1; j<str.length; j++){
-            if(Number(str[i]) + Number(str[j])=== 10){
+    for(let i=0; i<str.length; i++){ //iterating thru the array the 1st time
+        for(let j=i+1; j<str.length; j++){ //iterating thru the array the 2nd time
+            if(Number(str[i]) + Number(str[j])=== 10){ //if str[i] is covertible to Number than its a Number, not an alphabet
                 res = true;
-                if(str.slice(i,j).split("?").length -1 < 3){
+                if(str.slice(i,j).split("?").length -1 < 3){ //if ? is less than 3
                     return false;
                 }
             }
