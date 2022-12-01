@@ -4,7 +4,9 @@ function myFunction(str) {
     var arr = str.split(" ");
     var text = "";
     for (var i = 0; i < arr.length; i++) {
-      return text += arr[i] + "<br>"; //   "\n"
+    //   return text += arr[i] + "<br>"; 
+      return text += arr[i] + "\n"; 
+
     }
     }
     console.log (myFunction("Hello"))

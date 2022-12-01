@@ -1,6 +1,7 @@
 
 function findLongestWordLength(sentence) { //find longest word in a sentence
   var words = sentence.split(' '); // Take the string and convert it into an array of words. 
+  console.log (words)
   var maxLength = " ";  // Declare a variable to keep track of the maximum
 
   for (var i = 0; i < words.length; i++) {  // loop from 0 to the length of the array of words.
@@ -15,6 +16,26 @@ function findLongestWordLength(sentence) { //find longest word in a sentence
 findLongestWordLength("my name is bukola") 
 console.log(findLongestWordLength("my name is bukola"));
 
+
+//////////////////find longest word in a string of sentence.(SCA)
+function findLongestWordLength(str) {
+  let arr = str.split(" ");
+  // console.log(arr)
+  let num = [];
+  let max;
+  for (let i=0; i<arr.length; i++) {
+    let numberLength = arr[i].length; //u check the length of each of the no i.e numberlength
+    num.push(numberLength);
+    max = Math.max(...num); ////put the num inside here them Math.max will pick out the shortest word
+    // max = Math.min(...num); //put the num inside here them Math.max will pick out the shortest word
+
+  }
+  // console.log(max);
+  return max;
+}
+
+// findLongestWordLength("my name is bukola")
+console.log(findLongestWordLength("my name is bukola"))
 
 
 ///////////
@@ -83,9 +104,8 @@ console.log(largestOfFour(arr))
 
 
 
-////////////////////////////❗❌❓
-function confirmEnding(str, target) {
-// For example str.slice(10, 17) would return - give me.
+////////////////////////////
+function confirmEnding(str, target) { //to confirm true or false
 
   return str.slice(str.length - target.length) === target;
 }
@@ -178,6 +198,7 @@ console.log(findElement(arr, func))
 function booWho(bool) {
   return typeof bool === "boolean";
 }
+
 booWho(null);
 console.log(booWho(null))
 // Code Explanation
@@ -187,6 +208,7 @@ console.log(booWho(null))
 //////////////to make the every first letter word in a sentence an upppercase
 function titleCase(sentence) {
   var convertToArray = sentence.toLowerCase().split(" ");
+  console.log(convertToArray)
   var result = convertToArray.map(function(arr) { //arr=each array
     return arr.replace(arr.charAt(0), arr.charAt(0).toUpperCase());
   });
@@ -211,6 +233,10 @@ function frankenSplice(arr1, arr2, n) {
   }
   return localArray;
 }
+
+frankenSplice([1,2], ['its', 'alive'], 3) //??
+console.log(frankenSplice([1,2], ['its', 'alive'], 3))
+
 // Code Explanation
 // Our goal is to take all of the elements from arr1 and insert them into arr2 starting with index position n. At the same time we must ensurethat neither arr or arr2 have been mutated.
 // Using the slice() function we can create an exact replica of arr2 and assign the result of the operation to a variable, localArray.
@@ -223,12 +249,12 @@ function frankenSplice(arr1, arr2, n) {
 function bouncer(arr) {
   let newArray = [];
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i]) newArray.push(arr[i]);
+    if (arr[i]) === newArray.push(arr[i]); //??
   }
   return newArray;
 }
-bouncer(arr) //?
-console.log(bouncer(arr))//?
+bouncer([1,2,4]) //?
+console.log(bouncer([1,2,4]))//?
 // Code Explanation
 // We create a new empty array.
 // We use a for cycle to iterate over all elements of the provided array (arr).
@@ -257,7 +283,7 @@ function getIndexToIns(arr, num) {
 
   return arr.length;
 }
-console.log(getIndexToIns([3,2, 7, 9], 7))
+console.log(getIndexToIns([3, 2, 7, 9], 7))
 // Code Explanation
 // First I sort the array using .sort(callbackFunction) to sort it by lowest to highest, from left to right.
 // Then I use a for loop to compare the items in the array starting from the smallest one. 
@@ -277,7 +303,7 @@ function getIndexToIns(arr, num) {
   return count; // the above equals num's position in a sorted array
 }
 
-getIndexToIns([40, 60], 50);
+console.log(getIndexToIns([40, 60], 50))
 // Code Explanation
 // I do not sort the arr input array
 // I run a for loop counting whenever the num input is bigger than an arr input number.

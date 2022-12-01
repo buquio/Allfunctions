@@ -42,3 +42,6 @@ console.log(checkYuGiOh(10))
 // console.log(checkYuGiOh("kolade kehinde"))
 
 // console.log(output);
+
+
+
