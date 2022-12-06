@@ -1,7 +1,7 @@
 
 function findLongestWordLength(sentence) { //find longest word in a sentence
-  var words = sentence.split(' '); // Take the string and convert it into an array of words. 
-  console.log (words)
+  var words = sentence.split(' '); // Take the sentence and convert it into an array of words. 
+  // console.log (words)
   var maxLength = " ";  // Declare a variable to keep track of the maximum
 
   for (var i = 0; i < words.length; i++) {  // loop from 0 to the length of the array of words.
@@ -14,7 +14,7 @@ function findLongestWordLength(sentence) { //find longest word in a sentence
 }
 
 findLongestWordLength("my name is bukola") 
-console.log(findLongestWordLength("my name is bukola"));
+console.log(findLongestWordLength("my name is bukola")); //ans-6
 
 
 //////////////////find longest word in a string of sentence.(SCA)
@@ -65,7 +65,7 @@ console.log(reverseString("bukola"))
 //////////////////////////////📌💯✔
 function factorialize(num) {
   for (var product = 1; num > 0; num--) { //product is constant,while num is changing
-    product *= num; // 1=1*5=5, 1=1*4 =4etc
+    product *= num; // 1=  1*5=5, 1=1*4 =4etc
   }
   return product;
 }
@@ -140,6 +140,7 @@ console.log(repeatStringNumTimes('bukola', 4))
 // Use a while loop or for loop to repeat code as many times as needed according to num
 // Then we just have to add the string to the variable created on step one, and increase or decrease num depending on how you set the loop.
 // At the end of the loop, return the variable for the repeated word.
+
 //b
 function repeatStringNumTimes(str, num) {
   var accumulatedStr = "";

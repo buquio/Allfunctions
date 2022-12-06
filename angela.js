@@ -6,6 +6,8 @@ function myFunction(str) {
     for (var i = 0; i < arr.length; i++) {
     //   return text += arr[i] + "<br>"; 
       return text += arr[i] + "\n"; 
+    //   return text += arr[i] ; 
+
 
     }
     }
@@ -25,12 +27,13 @@ function myFunction(str) {
         var arr = str.split(","); //splitting a string turns it to an array
         //   return arr  
           return arr[0]
+
         }
         console.log (myFunction("abcdef"))
     
     ///////////
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    var text = "<ul>"; //openeing tag
+    var text = "<ul>"; //opening tag
     for (var i = 0; i < fruits.length; i++) {
       text += "<li>" + fruits[i] + "</li>";
     }
@@ -116,7 +119,7 @@ if(guestList.includes(guestName)){
 //xxxxx insert it inside html & a function
 //  NOTE: THIS WILL RUN IN LIVE SERVER OR BROWSER BECOS ITS HTML 
 
-/* <html>
+<html>
 <head>
 </head>
 <body>
@@ -127,6 +130,7 @@ if(guestList.includes(guestName)){
     
     <script> 
 var guestList= ["angela", "jack" ,"pan" ,"james", "lara" ,"jason"];
+
 function getGuestName() {
     var guestName= document.querySelector("[input]").text
     
@@ -140,7 +144,7 @@ else{
 } 
 </script>
 </body>
-<html> */
+<html> 
 
 
 
@@ -155,7 +159,7 @@ function fizzBuzz(){
 }
 fizzBuzz()
 
-ans:[1,1,1,1]
+ans:[1]
 
 
     ///3
@@ -192,9 +196,9 @@ function whosPaying(guestList){
 	 randomPersonPosition = Math.floor(Math.random() * numberOfPeople) + 1; //radomposition in whole number
     //or
      // var randomPerson= guestList[Math.floor(randomPersonPosition)]; //radomposition in decimal+whole number
-     console.log(Math.floor(randomPersonPosition) + " - " + Math.ceil(randomPersonPosition) + " - " + randomPersonPosition)
+    //  console.log(Math.floor(randomPersonPosition) + " - " + Math.ceil(randomPersonPosition) + " - " + randomPersonPosition)
 
-	var randomPerson= guestList[randomPersonPosition] 
+	var randomPerson= guestList[randomPersonPosition] //guestlist[i]
 	// return randomPerson + " is going to buy lunch today!"
 	return `${randomPerson}  is going to buy lunch today!`
 
@@ -256,9 +260,9 @@ console.log(fibonacci_series(8));
 
 /////////////
 function countDown (startingNumber, step) { //function name + parameters needed
-    let countFromNum = startingNumber + step;//general formular
+    let countFromNum = startingNumber + step;//general formular 30+5-35
     return function decrease() {//to return decrease function
-        countFromNum -= step;//formular for decrease function
+        countFromNum -= step;//formular for decrease function 35-5=30
         return countFromNum;//result for countDown function
     }
 }

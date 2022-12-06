@@ -11,7 +11,7 @@ function check(a,b){
     return a + b > 100 ? true : false
 }
 console.log(check(9, 5))   
-   
+    
 ///C ---if/else
 function check(a,b){
     if(a+b > 100){

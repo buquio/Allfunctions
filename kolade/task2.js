@@ -13,7 +13,7 @@ function convertCelsiusToFahr(celsius) {
       return fahrenheit;
     }
     
-  }
+   }
   
   // convertCelsiusToFahr(0);
   // convertCelsiusToFahr("0");

@@ -1,12 +1,21 @@
-function getFirstAndLast(array) {
-  let newArray =[];
-
-    const first = array[0]
-    const last = array[array.length-1]
-newArray.push(first)
-newArray.push(last)
-}
-    // return newArray
+function allOscarWinners(films) {
+  const result =  films.every(film => film.wonOscar === true); //ans: true
+  return result
+       }
+      
   
-    console.log(getFirstAndLast([34, 56,8]))
-
+  console.log(allOscarWinners([ 
+  {
+    title: 'Forecast Gump',
+    wonOscar: true,
+  },
+  {
+    title: "Moonlight",
+    wonOscar: true,
+  },
+  {
+    title: 'No Country for Old Men',
+    wonOscar: false,
+  }
+  ])
+  )
