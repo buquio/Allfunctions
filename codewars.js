@@ -1,14 +1,14 @@
             
   
 
-    ///////Forming a subset of 5 digit from a series of digits starting with the highest number then the next one and so on.
+    ///////Forming a subset of 5 digit from a series of digits starting with the highest number and so on.
     function solution(digits){
       let answer = 0;
       
       for (let i=0; i<digits.length; i++){
         let number = digits.substr(i, 5);  //pulls the next 5 digits into a substring, then find the highest substr
         // console.log (number)   //logs all substring
-        if(Number(number) > answer){       //convert to number and compare against answer  
+        if(Number(number) > answer){    //convert to number and compare against answer  
           answer = Number(number);
         }
       }
@@ -101,7 +101,7 @@ function squareSum(numbers) {
   //initialise empty variable called 'sum'
   //go thru the array of numbers
   //square each numbers
-  //add the result to sum continously
+  //add the result to sum-variable continously
 
   var sum = 0;
   for (var i =0; i < numbers.length; i++) {
@@ -203,7 +203,7 @@ console.log(countDevelopers([
 function countDevelopers(list) {
   
 let results = list.filter(list => list.continent =='Europe' && list.language =='JavaScript').length
-return results
+return results //you can store in results becos you are counting
 
   // return list.filter(x=>x.continent=='Europe'&&x.language=='JavaScript').length
 
@@ -219,8 +219,10 @@ console.log(countDevelopers([
 
 //////////////////Coding Meetup #2 - Higher-Order Functions Series - Greet developers
 function greetDevelopers(list) {
-  // const result = list.foreach(developer => developer.greeting = `Hi ${developer.firstName}, what do you like the most about ${developer.language}?`)
-  // return result
+  //**you cannot store in result becos you are only updating to list and you need to return updated list
+  // const result = list.foreach(developer => 
+  // developer.greeting = `Hi ${developer.firstName}, what do you like the most about ${developer.language}?`) 
+  //return result
    list.forEach(function(developer) {
      developer.greeting = `Hi ${developer.firstName}, what do you like the most about ${developer.language}?`;
    });
