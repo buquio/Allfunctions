@@ -1,12 +1,11 @@
-function countDevelopers(list) {
-  let results = list.find(list => list.continent.includes('Noah') && list.language.includes('JavaScript'))
-  return results
-  }
-  
-  console.log(countDevelopers([
-    { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
-    { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
-    { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
-    { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
-  ]))
-  
+function positiveSum(arr) {
+  let sum = 0;
+for (i=0; i < arr.length; i++) {
+ if (arr[i] > 0){
+   sum += arr[i]
+}
+ }
+return sum;
+ 
+}
+console.log(positiveSum([-2,2,3,4]))

@@ -293,10 +293,13 @@ function greetDevelopers(list) {
 
   
   ////////////////////
-  function createArray(number){
+  function createArray(number){ //an array of (number)5 items counted by icrement of 2
     var newArray = [];
-    
+    //Note: counter starts from 1 to 100 and so on
     for(var counter = 1; counter <= number; counter++){
+      // for(var counter = 1; counter <= number; counter +=2){ //increment by 2
+      // for(var counter = -4; counter <= number; counter +=2){
+
       newArray.push(counter);
     }
     
@@ -313,28 +316,28 @@ function animal(obj) {
   return `This  ${obj.color}  ${obj.name}  has  ${obj.legs}  legs.`
 
 }
-console.log(animal( {name:"dog",legs:4,color:"white"}) )
+console.log(animal( {name:"dog", legs:4, color:"white"}) )
 
 
 ///////////////////////
 function repeatStr(s, n){
-  //initialise empty array called 'a' to store the str
+  //initialise empty array called 'result' to store the str
   //set a condition to continue to run if array-lenght is still less than n
   //add str into array continously
   //convert aaray to str of repeated str
 
-  var a = [];
-  while(a.length < n){ 
-      a.push(s);
+  var result = [];
+  while(result.length < n){ 
+      result.push(s);
   }
-  return a.join('');
-  // return a
+ // return result.join(''); //this returs one single string e.g bukkybukkybukkybukkybukkybukky
+ return result // e.g [ 'bukky', 'bukky', 'bukky', 'bukky', 'bukky', 'bukky' ]
 }
 console.log(repeatStr ("bukky", 6))
 
 
 //////////////////////
-function squareSum(numbers){ 
+function squareSum(numbers){ //number is always anarray
   //array of numbers
   //initialise empty variable called 'sum'
   //go thru & square each numbers in the array
@@ -342,12 +345,15 @@ function squareSum(numbers){
 
   var sum = 0;
   for (var i =0; i < numbers.length; i++) {
-    squaredNumber = (numbers[i] * numbers[i])
-    sum += squaredNumber
+    // squaredNumber = (numbers[i] * numbers[i])
+    // sum += squaredNumber
+    sum += (numbers[i] * numbers[i])
+
   }
   return sum
 
 }
+console.log(squareSum([2,3]))
 
 //////////////////
 function doubleChar(str) {
@@ -359,9 +365,11 @@ function doubleChar(str) {
   }
   return store
 }
+console.log(doubleChar('bola'))
+
 
 /////////////////////////
-function countSheeps(arrayOfSheep) { 
+function countSheeps(arrayOfSheep) { // array of boolean values
   let countedNumber = 0
   
   for (i=0; i< arrayOfSheep.length; i++)
@@ -372,6 +380,25 @@ function countSheeps(arrayOfSheep) {
 }
 
 console.log(countSheeps([true, true, true, false, true, true, true, true, true, false, true, false, true, false,false, true, true, true, true, true, false, false, true,true]))
+
+//////////////
+function countSheeps(arrayOfSheep) { // array of boolean values
+  let countedNumber = 0
+  let sheep ="";
+  let cow;
+
+  for (i=0; i< arrayOfSheep.length; i++)
+  
+
+
+    if(arrayOfSheep[i] === 'sheep'){
+      countedNumber += arrayOfSheep[i]
+    }
+  return countedNumber
+}
+
+console.log(countSheeps(['sheep', 'sheep', 'sheep', 'cow', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'cow', 'sheep', 'cow', 'sheep', 'cow','cow', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'cow', 'cow', 'sheep','sheep']))
+
 
 ////////////////////////////
 
@@ -464,9 +491,10 @@ function passed (list) {
     return Math.round(answer / passed);
   
   } 
+console.log([????])
+
 //////////////////
-function getSum( a,b )
-{
+function getSum( a,b ){
   if(a !== b){
   return a+b
     }else{
@@ -474,6 +502,7 @@ function getSum( a,b )
     }
    //Good luck!
 }
+console.log(getSum( 2,6 ))
 
 ////////////////
 //  //////////////////????????????????????
@@ -510,10 +539,10 @@ function getSum( a,b )
 
 // EXTRA BONUSES
 //////////////////////////
-function findShort(s){
+function findShortNo(s){
   let wordsArr= s.split(' ')
   
-  let shortestWord = Infinity;
+  let shortestWord = Infinity; //start counting shortest word from infinity
 
   for(let i=0; i< wordsArr.length; i++){
   let wordLength = wordsArr[i].length; 
@@ -523,7 +552,7 @@ function findShort(s){
   }
   return shortestWord
 }  
-console.log(findShort("my name is bukola"))
+console.log(findShortNo("my name is bukola"))
 
 
 /////////////////////////////
@@ -553,6 +582,7 @@ function makeNegative(num) {
   
   }
   }
+console.log(makeNegative(7))
 
   ///////////////////
   function removeChar(str){
@@ -560,9 +590,10 @@ function makeNegative(num) {
      return str.slice(1, -1)
    
    };
+   console.log(removeChar('bolade'))
 
    ///////////////
-   function invert(array) {
+   function invert(array) { //negative inverse
     let newArray = [];
       for(let i=0; i< array.length; i++){
         if (array[i] === 0){ 
@@ -574,9 +605,10 @@ function makeNegative(num) {
         }
      return newArray;
   }
+   console.log(invert(['5', '3', '7']))
    
-   
-////////////////////////////
+   //////////////////////////////////////
+//////////NO EXAMPLE TO CONSOLE LOG////////
 function positiveSum(arr) {
   let sum = 0;
 for (i=0; i < arr.length; i++) {
@@ -587,8 +619,10 @@ for (i=0; i < arr.length; i++) {
 return sum;
  
 }
+console.log(positiveSum([-2,2,3,4]))
 
-//////////////
+
+//////////////??????
 const reverseSeq = n => {
   let reversedArr = [];
  
@@ -597,6 +631,8 @@ const reverseSeq = n => {
  }
  return reversedArr
 };
+console.log(reverseSeq([3,4,5]))
+
 
 //////////////////////
 function isDivisible(n, x, y) {
@@ -607,6 +643,8 @@ function isDivisible(n, x, y) {
     return false
   }
 }
+console.log(isDivisible(15, 5,3))
+
 
 ////////////////////
 function feast(beast, dish) {
@@ -614,6 +652,8 @@ function feast(beast, dish) {
     let allowed = beast[0] === dish[0] && beast[beast.length-1] === dish[dish.length- 1]
        return allowed                                                                  
   }
+  console.log()
+
   /////////////////
   function bonusTime(salary, bonus) {
     // your code here
@@ -623,12 +663,15 @@ function feast(beast, dish) {
         return '£' + salary;
       }
     }
+    console.log()
+
 
     //////////////////////
     function check(a,x){
       let output = a.includes(x)
       return output
      };
+     console.log()
 
      /////////////
      function typeValidation(variable, type) {
@@ -639,6 +682,8 @@ function feast(beast, dish) {
         return false
       }
     }
+    console.log()
+
     
     
    /// ENTRY CHALLENGE
@@ -648,6 +693,8 @@ function exclaimWord(word) {
   let newWord = word.toUpperCase()
   return newWord + '!'
 }
+console.log()
+
 
 
 ////////////////////2
@@ -664,6 +711,7 @@ function getFirstAndLast(array) {
     return newArray
   }
 }
+console.log()
 
 
 //////////////////////3
@@ -671,6 +719,7 @@ function getFirstAndLast(array) {
 function createSentence(person) {
   return `Hello my name is ${person.name}, I am ${person.age} years old and I am a ${person.job}`
  }
+ console.log()
 
  
  /////////////////////////4
@@ -685,6 +734,7 @@ function findTotalAge(people) {
   }
  return totalAge 
 }
+console.log()
 
 
 ///////////////////////5
@@ -696,6 +746,7 @@ function countChars (str, char) {
     for (let i=0; i< str.length; i++){
       if (string.charAt(i) == chart(i)
 }
+console.log()
 
 
 
@@ -708,7 +759,8 @@ return 'true'
 }else {
   return 'false'}
 }
-   
+console.log()
+  
 ///////////////7
 // please complete this function...
 function gatherPets(people) {
@@ -716,6 +768,7 @@ function gatherPets(people) {
   
  return results 
  }
+ console.log()
  
 
 
