@@ -7,7 +7,6 @@ function convertCelsiusToFahr(celsius) {
     else if (typeof celsius === 'object'){
       return  `${celsius} is not a valid number but a/an Object's type.`
     }
-    
     else {
       var fahrenheit = celsius * (9 / 5) + 32;
       return fahrenheit;

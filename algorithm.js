@@ -17,7 +17,9 @@ findLongestWordLength("my name is bukola")
 console.log(findLongestWordLength("my name is bukola")); //ans-6
 
 
-//////////////////find longest word in a string of sentence.(SCA)
+////?????????find longest word in a string of sentence.(SCA)
+///this only returns the number of the longest word not the word
+///not a good answer or not the required answer 
 function findLongestWordLength(str) {
   let arr = str.split(" ");
   // console.log(arr)
@@ -25,7 +27,7 @@ function findLongestWordLength(str) {
   let max;
   for (let i=0; i<arr.length; i++) {
     let numberLength = arr[i].length; //u check the length of each of the no i.e numberlength
-    num.push(numberLength);
+    num.push(numberLength);  // into the lenght of each word into an array of num
     max = Math.max(...num); ////put the num inside here them Math.max will pick out the shortest word
     // max = Math.min(...num); //put the num inside here them Math.max will pick out the shortest word
 
@@ -38,7 +40,7 @@ function findLongestWordLength(str) {
 console.log(findLongestWordLength("my name is bukola"))
 
 
-///////////
+///////////?????????
 function convertToF(celsius) {
   var fahrenheit = celsius * (9 / 5) + 32;
 
@@ -50,13 +52,17 @@ function convertToF(celsius) {
   }
 }
 
-convertToF("er");
-console.log(convertToF("er"))
+// convertToF("42");
+// console.log(convertToF("42"))
+convertToF(42);
+console.log(convertToF(42))
+
 
 
 ////////////////////////
 //take the string and reverse it, so if it originally reads ‘hello’, it will now read ‘olleh’. 
 function reverseString(str) {
+  //first split it into an array
   return str.split("").reverse().join(""); //split() function turn string into an array of characters
 }
 reverseString("bukola")
@@ -64,8 +70,10 @@ console.log(reverseString("bukola"))
 
 //////////////////////////////📌💯✔
 function factorialize(num) {
+  //5! = 5x4x3x2x1 = 120
+  //starting point is product which s equal to 1 always
   for (var product = 1; num > 0; num--) { //product is constant,while num is changing
-    product *= num; // 1=  1*5=5, 1=1*4 =4etc
+    product *= num; // 1*5=5, 1*4 =4etc
   }
   return product;
 }
@@ -115,11 +123,7 @@ console.log(confirmEnding("He has to give me a new name", "name"))
 
 // Code Explanation
 // First we use the slice method copy the string.
-// In order to get the last characters in str equivalent to the target's length we use the slice method.
-// The first parameter inside the slice method is the starting index and the second parameter would be the ending index.
-// In this case we only include one parameter which it will copy everything from the starting index.
-// We substract the length of str and the length of target, that way, we shall get the last remaining characters equivalent to the target's length.
-// Finally we compare the return result of slice to target and check if they have the same characters.
+// In order to get the last characters in str slice to target and check if they have the same characters.
 
 
 //////////////////////////////
@@ -165,34 +169,9 @@ function truncateString(str, num) {
   }
 }
 console.log(truncateString('bukola', 3))
-// Code Explanation
-// We start off with a simple if statement to determine one of two outcomes…
-// If our string length is greater than the num we want to truncate it, we return a slice of our string starting at character 0, and ending at num. We then append our '...' to the end of the string.
-// However, if above situation is not true, it means our string length is less than our truncation num. Therefore, we can just return the string.
 
 
 ///////////////////❗❌❓
-// Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. 
-// This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
-function findElement(arr, func) {
-  let num = 0;
-
-  for (var i = 0; i < arr.length; i++) {
-    num = arr[i];
-    if (func(num)) {
-      return num;
-    }
-  }
-
-  return undefined;
-}
-// findElement(arr, func)
-console.log(findElement(arr, func))
-// Code Explanation
-// Challenge asks us to look through array. This is done using a for loop.
-// The num variable is being passed into the function, so we set it to each index in our array.
-// The pre-defined function already checks each number for us, so if it is “true”, we return that num.
-// If none of the numbers in the array pass the function’s test, we return undefined.
 
 
 ///////////
@@ -206,20 +185,20 @@ console.log(booWho(null))
 // Uses the operator typeof to check if the variable is a boolean. If it is, it will return true. Otherwise, if it is any other type it will return false.
 
 
-//////////////to make the every first letter word in a sentence an upppercase
+////to make the every first letter word in a sentence an upppercase
 function titleCase(sentence) {
   var convertToArray = sentence.toLowerCase().split(" ");
   console.log(convertToArray)
   var result = convertToArray.map(function(arr) { //arr=each array
     return arr.replace(arr.charAt(0), arr.charAt(0).toUpperCase());
   });
-  return result.join(" ");
+  return result.join(" "); //joins it and gives it an appropriate space
 }
 titleCase("I'm a little tea pot");
 console.log(titleCase("I'm a little tea pot"))
 // Code Explanation
 // first we make entire string lowercase and then converting it into array. 
-// Then we are using map function to replace the lowercase character with uppercase. Finally, we are returning the string using join method.
+// Then use map function to replace the lowercase character with uppercase. Finally, we are returning the string using join method.
 
 
 ////////////////PAGE2////////////////////////////////////////////////////////////❗❌❓
@@ -250,7 +229,8 @@ console.log(frankenSplice([1,2], ['its', 'alive'], 3))
 function bouncer(arr) {
   let newArray = [];
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i]) === newArray.push(arr[i]); //??
+    if (arr[i] === true){ 
+      return newArray.push(arr[i]); //??
   }
   return newArray;
 }
@@ -258,9 +238,10 @@ bouncer([1,2,4]) //?
 console.log(bouncer([1,2,4]))//?
 // Code Explanation
 // We create a new empty array.
-// We use a for cycle to iterate over all elements of the provided array (arr).
+// for loop to iterate over all elements of the provided array (arr).
 // We use the if statement to check if the current element is truthy 1.3k or falsy 1.5k.
-// If the element is truthy, we push it to the new array (newArray). This result in the new array (newArray) containing only truthy elements.
+// If the element is truthy, we push it to the new array (newArray). 
+// This result in the new array (newArray) containing only truthy elements.
 // We return the new array (newArray).
 
 
@@ -269,11 +250,12 @@ function bouncer(arr) {
   return arr.filter(Boolean);
 }
 // Code Explanation
-// The Array.prototype.filter method expects a function that returns a Boolean value which takes a single argument and returns true for truthy 1.3k value or false for falsy 1.5k value. Hence we pass the built-in Boolean function.
+// The Array.prototype.filter method expects a function that returns a Boolean value which takes a single argument 
+// and returns true for truthy 1.3k value or false for falsy 1.5k value. Hence we pass the built-in Boolean function.
 
 //////////////////
 function getIndexToIns(arr, num) {
-  arr.sort(function(a, b) { //index a & b
+  arr.sort(function(a, b) { //numerical order
     return a - b;
   });
 
@@ -281,8 +263,7 @@ function getIndexToIns(arr, num) {
     if (arr[a] >= num) 
     return a;
   }
-
-  return arr.length;
+  return arr.length; //index of the number
 }
 console.log(getIndexToIns([3, 2, 7, 9], 7))
 // Code Explanation
@@ -291,8 +272,8 @@ console.log(getIndexToIns([3, 2, 7, 9], 7))
 //When an item on the array is greater than the number we are comparing against,then we return the index as an integer.
 
 
-//////////////////
-function getIndexToIns(arr, num) {
+//////////////////????
+function countSmaller(arr, num) {
   // Find my place in this sorted array.
   var times = arr.length; // runs the for loop once for each thing in the array
   var count = 0;
@@ -304,29 +285,32 @@ function getIndexToIns(arr, num) {
   return count; // the above equals num's position in a sorted array
 }
 
-console.log(getIndexToIns([40, 60], 50))
+console.log(countSmaller([40, 60], 50))
 // Code Explanation
 // I do not sort the arr input array
 // I run a for loop counting whenever the num input is bigger than an arr input number.
 // This number is equivalent to what num’s position would be in a sorted array.
 
 
-//////////////////////
+//////////////////////?????
 function mutation(arr) {
   var test = arr[1].toLowerCase();
   var target = arr[0].toLowerCase();
   for (var i = 0; i < test.length; i++) {
-    if (target.indexOf(test[i]) < 0) return false;
+    if (target.indexOf(test[i]) < 0) 
+    return false;
   }
   return true;
 }
+console.log(mutation(['john', 'victor', 'jane', 'sade']))
+
 // Code Explanation
 // First we make the two strings in the array lowercase. test will hold what we are looking for in target.
 // Then we loop through our test characters and if any of them is not found we return false.
 // If they are all found, the loop will finish without returning anything and we get to return true.
 
 
-/////////////////////
+/////////////////////?????????????
 function mutation(arr) {
   return arr[1]
     .toLowerCase()
@@ -340,7 +324,7 @@ function mutation(arr) {
 // Every will basically give you letter by letter to compare, which we do by using indexOf on the first string. indexOf will give you -1 if the current letter is missing. We check that not to be the case, for if this happens even once every will be false.
 
 
-//////////////////
+//////////////////??????????????
 function chunkArrayInGroups(arr, size) {
   var temp = [];
   var result = [];
@@ -366,7 +350,7 @@ function chunkArrayInGroups(arr, size) {
 // Finally, we return the value of result.
 
 
-//////////////////////////
+//////////////////////////??????????????????/
 function chunkArrayInGroups(arr, size) {
   // Break it up.
   var arr2 = [];

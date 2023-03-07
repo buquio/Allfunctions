@@ -5,7 +5,9 @@ function myFunction(str) {
     var text = "";
     for (var i = 0; i < arr.length; i++) {
     //   return text += arr[i] + "<br>"; 
-      return text += arr[i] + "\n"; 
+    //   return text += arr[i] + "\n"; 
+      return text += arr[i].join('\n'); 
+
     //   return text += arr[i] ; 
 
 
@@ -22,15 +24,23 @@ function myFunction(str) {
     
     ///////////////
     //to display the first array element, after a string split.
-    function myFunction() {
-        var str = "a,b,c,d,e,f"; 
+    function myFunction(str) { //str of array
+        // var str = "a,b,c,d,e,f"; 
+        // var arr= "'a','b','c','d','e','f'";
         var arr = str.split(","); //splitting a string turns it to an array
         //   return arr  
           return arr[0]
 
         }
-        console.log (myFunction("abcdef"))
-    
+        console.log (myFunction("a,b,c,d,e,f"))
+    //////part b
+        function myFunction(arr) {
+              return arr[0]
+            }
+            console.log (myFunction(['a','b','c','d','e','f']))
+          
+
+
     ///////////
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
     var text = "<ul>"; //opening tag
@@ -40,7 +50,7 @@ function myFunction(str) {
     text += "</ul>"; //closing tag
     
     console.log(fruits)
-    // console.log(text)
+    console.log(text)
     
     // xxxxxx using .foreach 
     var fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -52,7 +62,7 @@ function myFunction(str) {
       text += "<li>" + value + "</li>";
     }
     console.log(fruits)
-    // console.log(text)
+    console.log(text)
 
 
 ///////
@@ -118,6 +128,7 @@ if(guestList.includes(guestName)){
 //1b
 //xxxxx insert it inside html & a function
 //  NOTE: THIS WILL RUN IN LIVE SERVER OR BROWSER BECOS ITS HTML 
+
 
 <html>
 <head>
@@ -259,7 +270,7 @@ console.log(fibonacci_series(8));
 
 
 /////////////
-function countDown (startingNumber, step) { //function name + parameters needed
+function countDown(startingNumber, step) { //function name + parameters needed
     let countFromNum = startingNumber + step;//general formular 30+5-35
     return function decrease() {//to return decrease function
         countFromNum -= step;//formular for decrease function 35-5=30
